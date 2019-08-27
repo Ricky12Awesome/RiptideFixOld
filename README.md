@@ -1,6 +1,6 @@
 [![](https://jitpack.io/v/Ricky12Awesome/RiptideFix.svg)](https://jitpack.io/#Ricky12Awesome/RiptideFix)
 
-# Undefined Core
+# Riptide Fix
 This fixes Riptide with Depth Strider
 
 ## Add it to your project
