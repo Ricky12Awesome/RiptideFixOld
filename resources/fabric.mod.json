@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "id": "riptide_fix",
+  "version": "${version}",
+  "name": "Riptide Fix",
+  "description": "Fixes Riptide with Depth Strider",
+  "authors": [
+    "Ricky12Awesome"
+  ],
+  "contact": {
+    "homepage": "https://fabricmc.net/"
+  },
+  "icon": "assets/riptide_fix/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": ["com.github.ricky12awesome.riptidefix.RiptideFixClient"]
+  },
+  "mixins": [
+    "riptide_fix.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.4.0",
+    "fabric": "*"
+  },
+  "suggests": {
+    "flamingo": "*"
+  },
+  "custom": {
+    "modmenu:clientsideOnly": true
+  }
+}

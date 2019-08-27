@@ -1,0 +1,11 @@
+{
+  "required": true,
+  "package": "com.github.ricky12awesome.riptidefix.mixins",
+  "compatibilityLevel": "JAVA_8",
+  "client": [
+    "TridentFixMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
