@@ -8,7 +8,8 @@
     "Ricky12Awesome"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/"
+    "homepage": "https://www.curseforge.com/minecraft/mc-mods/riptide-fix",
+    "source": "https://github.com/Ricky12Awesome/RiptideFix"
   },
   "icon": "assets/riptide_fix/icon.png",
   "environment": "client",
