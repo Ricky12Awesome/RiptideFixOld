@@ -20,6 +20,7 @@ repositories {
   maven(url = "https://jitpack.io")
   maven(url = "http://server.bbkr.space:8081/artifactory/libs-release/")
   maven(url = "https://dl.bintray.com/shedaniel/cloth-config-2")
+  maven(url = "http://maven.sargunv.s3-website-us-west-2.amazonaws.com/")
   mavenCentral()
   jcenter()
 }
@@ -27,6 +28,10 @@ repositories {
 dependencies {
   modCompile(group = "net.fabricmc", name = "fabric-loader", version = loaderVersion)
   modCompile(group = "net.fabricmc.fabric-api", name = "fabric-api", version = fabricVersion)
+
+  modCompile(group = "me.shedaniel.cloth", name = "config-2", version = "1.1.1")
+
+  include(group = "me.shedaniel.cloth", name = "config-2", version = "1.1.1")
 
   modImplementation(group = "io.github.prospector", name = "modmenu", version = "1.7.9+build.+")
 

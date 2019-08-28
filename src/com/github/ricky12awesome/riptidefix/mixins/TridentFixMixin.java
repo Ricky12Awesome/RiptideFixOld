@@ -1,5 +1,6 @@
 package com.github.ricky12awesome.riptidefix.mixins;
 
+import com.github.ricky12awesome.riptidefix.RiptideFixClient;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.LivingEntity;
@@ -13,12 +14,10 @@ public class TridentFixMixin {
 
     @Inject(at = @At("RETURN"), method = "getDepthStrider(Lnet/minecraft/entity/LivingEntity;)I", cancellable = true)
     private static void getDepthStrider(LivingEntity entity, CallbackInfoReturnable<Integer> cir) {
-        final int result = EnchantmentHelper.getEquipmentLevel(Enchantments.DEPTH_STRIDER, entity);
+        if (!RiptideFixClient.getInstance().getConfig().isEnabled()) return;
 
         if (entity.isUsingRiptide()) {
             cir.setReturnValue(0);
-        } else {
-            cir.setReturnValue(result);
         }
     }
 }

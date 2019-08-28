@@ -14,6 +14,7 @@
   "icon": "assets/riptide_fix/icon.png",
   "environment": "client",
   "entrypoints": {
+    "modmenu": ["com.github.ricky12awesome.riptidefix.RiptideFixModMenu"],
     "client": ["com.github.ricky12awesome.riptidefix.RiptideFixClient"]
   },
   "mixins": [

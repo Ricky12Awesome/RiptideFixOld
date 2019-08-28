@@ -11,6 +11,6 @@ repositories {
 }
 
 dependencies {
-  modCompile(group = "com.github.Ricky12Awesome", name = "RiptideFix", version = "1.0.0")
+  modCompile(group = "com.github.Ricky12Awesome", name = "RiptideFix", version = "1.1.0")
 }
 ```

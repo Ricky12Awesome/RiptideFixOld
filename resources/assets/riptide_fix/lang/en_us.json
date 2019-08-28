@@ -1,0 +1,5 @@
+{
+  "text.riptide_fix.default.title": "Riptide Fix Config",
+  "text.riptide_fix.default.isEnabled": "Is Enabled",
+  "text.riptide_fix.default.isEnabled.tooltip": "Enables/Disables the Riptide Fix."
+}
