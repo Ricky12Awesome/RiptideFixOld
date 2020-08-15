@@ -4,39 +4,25 @@ val modid: String = "riptide_fix"
 val minecraftVersion: String by extra.properties
 val yarnMappings: String by extra.properties
 val loaderVersion: String by extra.properties
-val fabricVersion: String by extra.properties
 
 plugins {
-  kotlin("jvm") version "1.3.50"
-  id("fabric-loom") version "0.2.5-SNAPSHOT"
-  id("parseLangFile") version "1.1:1e3345d"
+  kotlin("jvm") version "1.4.0"
+  id("fabric-loom") version "0.4-SNAPSHOT"
   id("maven-publish")
 }
 
-// Probably don't need some of these.
 repositories {
-  maven(url = "http://maven.fabricmc.net/")
-  maven(url = "https://kotlin.bintray.com/kotlinx")
-  maven(url = "https://jitpack.io")
-  maven(url = "http://server.bbkr.space:8081/artifactory/libs-release/")
-  maven(url = "https://dl.bintray.com/shedaniel/cloth-config-2")
-  maven(url = "http://maven.sargunv.s3-website-us-west-2.amazonaws.com/")
+  maven("http://maven.fabricmc.net")
+  maven("https://libraries.minecraft.net")
   mavenCentral()
   jcenter()
 }
 
 dependencies {
-  modCompile(group = "net.fabricmc", name = "fabric-loader", version = loaderVersion)
-  modCompile(group = "net.fabricmc.fabric-api", name = "fabric-api", version = fabricVersion)
+  minecraft("com.mojang", "minecraft", minecraftVersion)
+  mappings("net.fabricmc", "yarn", yarnMappings, classifier = "v2")
 
-  modCompile(group = "me.shedaniel.cloth", name = "config-2", version = "1.1.1")
-
-  include(group = "me.shedaniel.cloth", name = "config-2", version = "1.1.1")
-
-  modImplementation(group = "io.github.prospector", name = "modmenu", version = "1.7.9+build.+")
-
-  minecraft(group = "com.mojang", name = "minecraft", version = minecraftVersion)
-  mappings(group = "net.fabricmc", name = "yarn", version = yarnMappings)
+  modCompile("net.fabricmc", "fabric-loader", loaderVersion)
 }
 
 sourceSets["main"].java.srcDirs("src/")
@@ -53,12 +39,10 @@ tasks.withType<ProcessResources> {
   }
 }
 
-tasks.withType<KotlinCompile> {
-  kotlinOptions.jvmTarget = "1.8"
-}
-
 tasks.withType<JavaCompile> {
   options.encoding = "UTF-8"
+  targetCompatibility = "1.8"
+  sourceCompatibility = "1.8"
 }
 
 tasks {

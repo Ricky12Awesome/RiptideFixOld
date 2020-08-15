@@ -14,18 +14,16 @@
   "icon": "assets/riptide_fix/icon.png",
   "environment": "client",
   "entrypoints": {
-    "modmenu": ["com.github.ricky12awesome.riptidefix.RiptideFixModMenu"],
-    "client": ["com.github.ricky12awesome.riptidefix.RiptideFixClient"]
+    "client": [
+      "com.github.ricky12awesome.riptidefix.RiptideFixClient"
+    ]
   },
   "mixins": [
     "riptide_fix.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=0.4.0",
-    "fabric": "*"
-  },
-  "suggests": {
-    "flamingo": "*"
+    "minecraft": "1.16.x",
+    "fabricloader": ">=0.9.0"
   },
   "custom": {
     "modmenu:clientsideOnly": true

@@ -1,8 +1,6 @@
 package com.github.ricky12awesome.riptidefix.mixins;
 
-import com.github.ricky12awesome.riptidefix.RiptideFixClient;
 import net.minecraft.enchantment.EnchantmentHelper;
-import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.LivingEntity;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -11,11 +9,8 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(EnchantmentHelper.class)
 public class TridentFixMixin {
-
-    @Inject(at = @At("RETURN"), method = "getDepthStrider(Lnet/minecraft/entity/LivingEntity;)I", cancellable = true)
+    @Inject(at = @At("RETURN"), method = "getDepthStrider", cancellable = true)
     private static void getDepthStrider(LivingEntity entity, CallbackInfoReturnable<Integer> cir) {
-        if (!RiptideFixClient.getInstance().getConfig().isEnabled()) return;
-
         if (entity.isUsingRiptide()) {
             cir.setReturnValue(0);
         }
