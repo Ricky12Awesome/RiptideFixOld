@@ -1,4 +1,4 @@
-[![](https://jitpack.io/v/Ricky12Awesome/RiptideFix.svg)](https://jitpack.io/#Ricky12Awesome/RiptideFix)
+This project is no longer maintained, it has been rewritten new repo: https://github.com/Ricky12Awesome/RiptideFix
 
 # Riptide Fix
 This fixes Riptide with Depth Strider
